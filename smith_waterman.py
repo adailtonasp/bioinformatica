@@ -2,16 +2,16 @@
 # smith waterman
 
 # entrada
-s1 = "TGGT"
-s2 = "CGT"
+s2 = "CCCCCCCCGCUCCACUCUGU"
+s1 = "CCCCUCCCCUCCC"
 gap = -3
 match = 2
 mismatch = -1
 
 # process in
-s1 = "U" + s1
+s1 = "-" + s1
 
-s2 = "U" + s2
+s2 = "-" + s2
 
 
 class node:
@@ -40,25 +40,33 @@ for i in range(len(s1)):
 
 
 def set_value(matrix, act_node, gap, mismatch, match):
-    n1 = [act_node[0]][act_node[1]]
-    n2 = matrix[act_node[0]][act_node[1]]
-    if n1 == n2:
-        match = matrix[act_node[0]-1][act_node[1]-1].value + match
-    else:
-        mismatch = matrix[act_node[0]-1][act_node[1]-1].value + mismatch
+    n1 = matrix[act_node[0]][act_node[1]].n1
+    n2 = matrix[act_node[0]][act_node[1]].n2
 
     gap_left = matrix[act_node[0]][act_node[1]-1].value + gap
 
     gap_top = matrix[act_node[0]-1][act_node[1]].value + gap
 
-    dict_value = {"match": match, "mismatch": mismatch,
-                  "gap_left": gap_left, "gap_top": gap_top}
+    dict_value = {"gap_left": gap_left, "gap_top": gap_top}
+
+    if n1 == n2:
+        match = matrix[act_node[0]-1][act_node[1]-1].value + match
+        dict_value.setdefault("match",match)
+        #dict_value["match"] = match
+    else:
+        mismatch = matrix[act_node[0]-1][act_node[1]-1].value + mismatch
+        dict_value.setdefault("mismatch",mismatch)
+        #dict_value["mismatch"] = mismatch
 
     # print(dict_value)
 
-    matrix[act_node[0]][act_node[1]].op = max(dict_value)
+    value = sorted(dict_value.items(),key=lambda x:x[1])[-1]
 
-    matrix[act_node[0]][act_node[1]].value = dict_value[max(dict_value)]
+    #value = max(dict_value)
+
+    matrix[act_node[0]][act_node[1]].op = value[0]
+
+    matrix[act_node[0]][act_node[1]].value = value[1]
 
 
 for j in range(len(s2)-1):
@@ -100,3 +108,6 @@ while(True):
         seq_s2 = seq_s2 + "-"
     else:
         break
+
+print(seq_s1+"\n")
+print(seq_s2+"\n")
