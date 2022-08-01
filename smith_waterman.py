@@ -114,15 +114,15 @@ while(True):
 #CORRECAO
 if act_node[0] == 0 : #siginica que esta na primeira coluna
     for i in range(act_node[1]):
-        seq_s2 = seq_s2 + "-"
-        seq_s1 = seq_s1 + matrix[act_node[0]][i].n1
-elif act_node[1] == 0:
-    for j in range(act_node[0]):
+        seq_s2 = seq_s2 + matrix[act_node[0]][i].n1
         seq_s1 = seq_s1 + "-"
-        seq_s2 = seq_s2 + matrix[j][act_node[j]].n2
+elif act_node[1] == 0:
+    for j in range(act_node[0],0):
+        seq_s1 = seq_s1 + matrix[j][act_node[j]].n1
+        seq_s2 = seq_s2 + "-"
 
-print(seq_s1[::-1]+"\n")
-print(seq_s2[::-1]+"\n")
+print(seq_s1+"\n")
+print(seq_s2+"\n")
 
 act_node = [len(s2)-1, len(s1)-1]
 
