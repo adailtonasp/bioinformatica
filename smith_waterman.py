@@ -31,12 +31,15 @@ def create_matrix(s1, s2, gap):
 
 
 def set_value(matrix, act_node, gap, mismatch, match):
-    # act_node => (i, j)
-    # i relativo a coluna
-    # j relativo a linha
-    # o primeiro indice da matrix precisa ser o iterador da linha
-    # o segundo indice sera o iterador da coluna
+    """"
+    act_node => (i, j)
+    i relativo a coluna
+    j relativo a linha
+    o primeiro indice da matrix precisa ser o iterador da linha
+    o segundo indice sera o iterador da coluna
+    """
     n1 = matrix[act_node[1]][act_node[0]].n1
+
     n2 = matrix[act_node[1]][act_node[0]].n2
 
     gap_left = matrix[act_node[1]][act_node[0]-1].value + gap
@@ -51,8 +54,6 @@ def set_value(matrix, act_node, gap, mismatch, match):
     else:
         mismatch = matrix[act_node[1]-1][act_node[0]-1].value + mismatch
         dict_value.setdefault("mismatch", mismatch)
-
-    # adicionar os demais valores com o mesmo valor maximo
 
     value = sorted(dict_value.items(), key=lambda x: x[1])[-1]
 
@@ -115,9 +116,9 @@ def backtrace(matrix):
         else:
             break
 
-    print("seq_s1", seq_s1)
-    print("seq_s2", seq_s2)
-    print("act_node", act_node)
+    # print("seq_s1", seq_s1)
+    # print("seq_s2", seq_s2)
+    # print("act_node", act_node)
 
     return seq_s1, seq_s2, act_node
 
@@ -144,7 +145,7 @@ def calc_backtrace_value(matrix, seq_s1, seq_s2, match, mismatch, gap):
     for i in range(len(seq_s1)):
         if seq_s1[i] == "-" and seq_s2[i] == "-":
             sum_value = sum_value
-            print("Double Gap")
+            # print("Double Gap")
         elif seq_s1[i] == "-" or seq_s2[i] == "-":
             sum_value = sum_value + gap
         elif seq_s1[i] != seq_s2[i]:
@@ -152,8 +153,10 @@ def calc_backtrace_value(matrix, seq_s1, seq_s2, match, mismatch, gap):
         else:  # if seq_s1[i] == seq_s2[i]:
             sum_value = sum_value + match
 
-    print("meta_value", meta_value)
-    print("sum_value", sum_value)
+    # print("meta_value", meta_value)
+    # print("sum_value", sum_value)
+
+    return sum_value
 
 
 def main():
@@ -163,27 +166,46 @@ def main():
 
     with open(sys.argv[1], 'r') as file_r:
         content_r = csv.reader(file_r, delimiter=";")
-        s1 = "CGGUACAUUGUUGCAGGCAAUUGUGAGUUGUGUUAGACAUGGGCAGUUUAACCCUGGGAGGGGCUGGUGGUUUACCUGACUACUUAUUGCGCUUUGGCGGGGCUGCAGCCUAGCUGGUCCCCGUGCGAUUUCC"
-        s2 = "CGGUACAUUGUUGCAGGCAAUUGUGAAGUGAGUUAGACAUGGGCAGUUUAACCCUGGUGGGGUGGUUUACCUGACUGUACUACUUAUUGCGCUUUGGCUGCAGCUGGUCCCCUCCCCGUGCGAUUUCCCUUCAACGCAUGGUAGUGGGAACCUGUUGGAGAGGUUCUGAUGAAACUAACCCUGACAUGUUACUGGGCUGG"
+        content_r.__next__()
+        count = 0
+        for row in content_r:
+            line_splited = row[2].split(" = ")
+            line_splited = line_splited[1].split(", ")
+            s2 = line_splited[0][1:-1]  # vertical
+            s1 = line_splited[1][1:-1]  # horizontal
 
-        gap = -2
-        match = 3
-        mismatch = -3
+            gap = -2
+            match = 3
+            mismatch = -3
 
-        matrix = create_matrix(s1, s2, gap)
+            matrix = create_matrix(s1, s2, gap)
 
-        for j in range(len(matrix)-1):  # itera sobre linha
-            for i in range(len(matrix[0])-1):  # itera sobre coluna
-                set_value(matrix, (i+1, j+1), gap, mismatch, match)
+            for j in range(len(matrix)-1):  # itera sobre linha
+                for i in range(len(matrix[0])-1):  # itera sobre coluna
+                    set_value(matrix, (i+1, j+1), gap, mismatch, match)
 
-        for j in range(len(matrix)):
-            for i in range(len(matrix[0])):
-                print(matrix[j][i].value, end=' ')
-            print("\n")
+            # for j in range(len(matrix)):
+            #     for i in range(len(matrix[0])):
+            #         print(matrix[j][i].value, end=' ')
+            #     print("\n")
+            seq_s1, seq_s2, act_node = backtrace(matrix)
 
-        seq_s1, seq_s2, act_node = backtrace(matrix)
+            score = calc_backtrace_value(
+                matrix, seq_s1, seq_s2, match, mismatch, gap)
 
-        calc_backtrace_value(matrix, seq_s1, seq_s2, match, mismatch, gap)
+            with open(sys.argv[2], 'a') as file_w:
+                file_w.writelines(f"Line {count}\n")
+                file_w.writelines(
+                    f"Alinhamento ** score = {score} ** Match = {match} | mismatch = {mismatch} | Gap = {gap}\n")
+                file_w.writelines(
+                    "------------------------------------------------------------------\n")
+                file_w.writelines(f"{seq_s2}\n")
+                file_w.writelines(f"{seq_s1}\n")
+                file_w.writelines(
+                    "==================================================================\n")
+
+            # print(f"Line {count} OK\n")
+            count = count + 1
 
 
 if __name__ == "__main__":
