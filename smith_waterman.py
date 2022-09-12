@@ -31,7 +31,7 @@ def create_matrix(s1, s2, gap):
 
 
 def set_value(matrix, act_node, gap, mismatch, match):
-    """"
+    """
     act_node => (i, j)
     i relativo a coluna
     j relativo a linha
@@ -174,9 +174,9 @@ def main():
             s2 = line_splited[0][1:-1]  # vertical
             s1 = line_splited[1][1:-1]  # horizontal
 
-            gap = -2
-            match = 3
-            mismatch = -3
+            gap = -3
+            match = 1
+            mismatch = -1
 
             matrix = create_matrix(s1, s2, gap)
 
@@ -194,16 +194,15 @@ def main():
                 matrix, seq_s1, seq_s2, match, mismatch, gap)
 
             with open(sys.argv[2], 'a') as file_w:
-                file_w.writelines(f"Line {count}\n")
-                file_w.writelines(
-                    f"Alinhamento ** score = {score} ** Match = {match} | mismatch = {mismatch} | Gap = {gap}\n")
-                file_w.writelines(
-                    "------------------------------------------------------------------\n")
                 file_w.writelines(f"{seq_s2}\n")
                 file_w.writelines(f"{seq_s1}\n")
+                file_w.writelines(f"score = {score}\n")
+                file_w.writelines(f"gap = {gap}\n")
+                file_w.writelines(f"match = {match}\n")
+                file_w.writelines(f"mismatch = {mismatch}\n")
+                file_w.writelines(f"Line {count}\n")
                 file_w.writelines(
                     "==================================================================\n")
-
             # print(f"Line {count} OK\n")
             count = count + 1
 
