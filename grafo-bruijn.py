@@ -1,17 +1,16 @@
-
 k = 3
 
 lista_entrada=("ATT","GCC","CAT","TTG","CCA","TGC","ATC","TCC","TGA","GAC","CAT","ATG","CCA")
 
-string_saida= ""
-
 class node:
+    lista_entrada = []
+    lista_saida = []
     def __init__(self,value):    
         self.value = value
-        self.lista_entrada = []
-        self.lista_saida = []
 
 class arco:
+    node_saida = node()
+    node_entrada = node()
     def __init__(self,node_saida,node_entrada,rotulo):
         self.node_saida = node_saida
         self.node_entrada = node_entrada
@@ -41,9 +40,11 @@ for i in lista_entrada:
 
     arco_c = arco(node_p,node_s,i)
 
-    arco_c.node_saida.lista_saida.append(arco_c)
+    #vinculo de arco e nos
 
-    arco_c.node_entrada.lista_entrada.append(arco_c)
+    #node_p.lista_saida.append(arco_c)
+
+    #node_s.lista_entrada.append(arco_c)
 
     lista_arco.append(arco_c)
 
@@ -62,38 +63,58 @@ for i in lista_node:
 
 node_atual = init_node
 
+string_saida= ""
+
+try:
+    string_saida = string_saida + node_atual.value
+except:
+    print("Nao foi possivel definir um no inicial")
+    exit()
 #correcao para inicio do caminho no ciclo
 while(len(node_atual.lista_saida) == 1 and len(lista_arco) > 0):
-    string_saida = string_saida + node_atual.value
 
-    lista_arco.remove(node_atual.lista_saida[0])
+    arco_c = lista_arco.pop(lista_arco.index(node_atual.lista_saida[0])) #pode ser mais simples
 
-    node_atual = node_atual.lista_saida[0].node_entrada  
+    node_atual.lista_saida.remove(arco_c)
 
+    node_atual = node_atual.lista_saida[0].node_entrada
+
+    node_atual.lista_entrada.remove(arco_c)
+
+    string_saida = string_saida + node_atual.value[-1]
 #correcao para finalizacao do caminho no ciclo
 string_saida_anexo = ""
 while(len(final_node.lista_entrada) == 1 and len(lista_arco) > 0):
-    string_saida_anexo = final_node.value + string_saida_anexo
+    
+    string_saida_anexo = final_node.value[-1] + string_saida_anexo
 
-    lista_arco.remove(final_node.lista_entrada[0])
+    arco_c = lista_arco.pop(lista_arco.index(final_node.lista_entrada[0])) #pode ser mais simples
+
+    final_node.lista_entrada.remove(arco_c)
 
     final_node = final_node.lista_entrada[0].node_saida
 
-arco_atual = node_atual.lista_saida[0]
+    final_node.lista_saida.remove(arco_c)
 
-ciclo = []
+arco_c = node_atual.lista_saida[0] #o primeiro dos arcos que estao saindo do no
+
+ciclo_node_v = [] #ciclo de valores de no
 
 while (len(lista_arco) != 0):
 
-    while(node_atual.value != arco_atual.node_entrada.value):
-        ciclo.append(arco_atual)
-        node_atual = arco_atual.node_entrada
-        arco_atual = node_atual.lista_saida[0]
-        node_atual.lista_saida.remove(arco_atual)
-
-    for i in ciclo:
-        lista_arco.remove(i)
+    while True:
+        ciclo_node_v.append(node_atual.value)
+        #atualiza as referencias dos nos que envolver o arco atual
+        node_atual.lista_saida.remove(arco_c)
+        node_atual = arco_c.node_entrada
+        node_atual.lista_entrada.remove(arco_c)
+        arco_c = node_atual.lista_saida[0]
+        string_saida = string_saida + node_atual.value[-1]
+        if node_atual.value in ciclo_node_v:
+            break
     
-    ciclo = []
+    ciclo_node_v = []
 
-input()
+string_saida = string_saida + string_saida_anexo
+
+input(string_saida)
