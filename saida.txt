@@ -1,0 +1,400 @@
+---C-C
+CCCCCC
+score = -10
+gap = -3
+match = 1
+mismatch = -1
+Line 0
+==================================================================
+UGCU-----G
+GGCUGGGGGG
+score = -12
+gap = -3
+match = 1
+mismatch = -1
+Line 1
+==================================================================
+--AACCG---GUAAA-
+AAAACCCGGGGUCCCA
+score = -16
+gap = -3
+match = 1
+mismatch = -1
+Line 2
+==================================================================
+--C--U
+CCCUUU
+score = -10
+gap = -3
+match = 1
+mismatch = -1
+Line 3
+==================================================================
+CUCGCC-C--CGC--C-CC
+CCCGCGCCCCCGCCCCCCC
+score = -9
+gap = -3
+match = 1
+mismatch = -1
+Line 4
+==================================================================
+CUCU--G-C-AG-U-G
+CAACGGGCCAAGUUGG
+score = -14
+gap = -3
+match = 1
+mismatch = -1
+Line 5
+==================================================================
+ACG-AAAU----
+AUUAAAUUUUUU
+score = -14
+gap = -3
+match = 1
+mismatch = -1
+Line 6
+==================================================================
+GGACC--UA--G-AG-
+UGCACUUUAGGGAACU
+score = -16
+gap = -3
+match = 1
+mismatch = -1
+Line 7
+==================================================================
+A-GC-AAGC-CA---A
+GGGUAAAGACCAAAAA
+score = -14
+gap = -3
+match = 1
+mismatch = -1
+Line 8
+==================================================================
+UGGAAC--A----A
+CUGUUCAAAAAAAA
+score = -18
+gap = -3
+match = 1
+mismatch = -1
+Line 9
+==================================================================
+AA-A---CUCUA-U-UAC-CCAC-C-U----A-UCU-AA-U---CC--UCUUCUCU--G-CG--CU-----A---C---A--A-CCG--UAUU-UC--CU------UA-----GU-U---C--AGUUGGUUAUGGUCAAGUCCAUCCGAAGAGCGCAGCC
+AGAACCCCGCUAUUUUAGCCCGCCCUUAAAAAUUCCAAAUUCCCCUUUUAUUCUCGGGGCCGCCCUAAAAAACCCCAAAAAAACCCGUUUAUUUUGCCCUUUUUUUUAGGGGGGUUUCCCCAAAGUUGGUUAUGGUCAAGUCCAUCCGAAGAGCGCAGCC
+score = -106
+gap = -3
+match = 1
+mismatch = -1
+Line 10
+==================================================================
+U-------UUA-----CU-------GCU---GCG------C--C-----
+GUUUUUUUUUACCCCCCUGGGGGGGGCUGGGGCGCCCCCCCCCCGGGGG
+score = -93
+gap = -3
+match = 1
+mismatch = -1
+Line 11
+==================================================================
+G---A-AG---AU------G-G-G--AGAC--AUAGCGAAUUACUUU-GG-AG----CCA-CUAAGAU--CG----AGG-AUA----C-CACCCUGG-GCCA-GCCGGG--A--A----GC--C-GA-G-----CGCUUGUAUUCGUCCCGCCGUUUUCA
+UAAAAAAGAAAAUGGGGGGGGGGGAAAGGGAAAUAGAGGCUCACCCUGGGAAGCCCCCCACCUCAGCUCCCAAAAAACUAAUUCCCCCCCAUUCUGCGGUCUGGACGGUAAAAAAGGGGGCCCCGGAGGCCCCCCGCUUGUAUUCGUCCCGCCGUUUUCA
+score = -112
+gap = -3
+match = 1
+mismatch = -1
+Line 12
+==================================================================
+---U-UC-------U--UG------------------U---C--C-CC---------U-----------AUA---UA--CGUAUUGUCAAACG-----UCGUUCUUAUAGUGCUUGCCUAUACCCUAGUCUCGACCU
+UUUUUUCUUUUUUUUUUUGUUUUUUUUUUUUUUUUUUUCCCCCCCCCCUUUUUUUUUUAAAAAAAAAAAAUAUUUUACCCGUAUUGUCAAACGUUUUUUCGUUCUUAUAGUGCUUGCCUAUACCCUAGUCUCGACCU
+score = -131
+gap = -3
+match = 1
+mismatch = -1
+Line 13
+==================================================================
+UGUG--A-G-GAUG---UCG--UU--C--UCGCAGC--U---CUU-GA----C--U----CU---U--G-----U---C-UU-U----U---ACCUCU-G-C-CUAUUACCUC----AAA---CACAU-CACAAAGUUGGGGGUAGCGAAUCCGUGUCCUGGUUCCGC-ACG----UCCUGACAUGCCAAACCGGCACGU
+CGAGAAAGGGGUUUUUUUCGUUUUCCCUUUCGGACCUUUCCCCUUGGACCCCCUUUCCCCCUUUUUGGGUUUUUUCCCCUUAUUUUUUUAAAACCUCUGGCCCCAAAAAACACAAAAAUUCCCCAGAUCCACAAAGUUGGGGGUAGCGAAUCCGUGUCCUGGUUCCGCAACGUUUUUCCUGACAUGCCAAACCGGCACGU
+score = -98
+gap = -3
+match = 1
+mismatch = -1
+Line 14
+==================================================================
+-----A-C--------UC-GGUAGU--CCG----GGAA-C-G--U--U-UA--U----
+AAAAAACCUUUUUUUUUCGGGUAAUCCCUUGGGGGUUACCGGUUUUUUUUGUUUUUUU
+score = -90
+gap = -3
+match = 1
+mismatch = -1
+Line 15
+==================================================================
+CCGUGU-U--UGU-CCUAAGU--UCGG--C-UG--C-AU-GGA-CCC-G--G-UC-AUGC-AGCG-A-A----C-U--UUG-GUUG-CC-C-UU-C---UGCAU-UA-C-UAC---G--CU-CC--UUC-G-AU--
+GAAUGAUUUUUGUCCCGCAUUUUUCAACCCUUGCCCAAUGGUACCAAGGGGGUUAAAGACAACCGAAAACCCCCUUUUUCGGGUUCCCCCCUUUCCUUUUGCAUUUACCUUACGGGGCCCUCCAUUUGCGGAACCC
+score = -114
+gap = -3
+match = 1
+mismatch = -1
+Line 16
+==================================================================
+----G----A---U-----U--AGG---------------G----GGU---------G-GA-GU-------G--U-A--------------CGU----U-GUCCUACAACCUAUGGUAAUAAACAUAGCGCGCCGUAUAUCAAGGACGCCACGCCCCCAGUGAGGACA
+GGGGGAAAAAUUUUUUUUUUAAAGGGGGGGGGGGGGGGGGGGGGGGGUGGGGGGGGGGGGAGGUGGGGGGGGUUUAACCCCCCCCCCCCCCCGUUUUUUGGUCCUACAACCUAUGGUAAUAAACAUAGCGCGCCGUAUAUCAAGGUUAGGACGCCCCCAGUGAGGACA
+score = -150
+gap = -3
+match = 1
+mismatch = -1
+Line 17
+==================================================================
+-G---UU---A------G--C----U----UC---------AU------A--A------
+GGUUUUUAAAAGGGGGGGCCCUUUUUUUUUUCAAAAAAAAAAUAAAAAAAAAAAAAAAA
+score = -125
+gap = -3
+match = 1
+mismatch = -1
+Line 18
+==================================================================
+ACCAAC-AU-GC-----AAUAGUAAU-GAAGG---GGG-A-CU-----UUAAAGCA--C-U-----A---CCCAAUGC-G------UU----
+UGUUAAAAUGGAAAAAAAAGCCCAAUGGCAGGGGGGGGAACCUUUUUUUUACCGCACCCUUAAAAAACCCCCCUACCCGGUUUUUUUUGGGG
+score = -100
+gap = -3
+match = 1
+mismatch = -1
+Line 19
+==================================================================
+UC----AG----AA----CUU--C-C-AU-CU---GU-AAU--U-----U--------U----UG-CG-GGAC-G--U------C-A-CAUC-AUC--U-CUUUUU-----A--UC-CA-----AU--CCACCGAACCACGAAUUGCGACGAUAAGGGCGCGCCUACCGCUUAGGCUGUUAGCCG
+ACAAAAAGAAAAAACCCCCAUCCCCCAAUCCGGGGGUAACUUUUUUUUUUUUUUUUUUUUUUUUCCCGGGGAGGGUUUCCCCCCCAACCAUCAAUAUUUCCUUUAUAAAAAAUUUCCCGAAAAAAUCCCCACCGAACCACGAAUUGCGACGAUAAGGGCGCGCCUACCGCUUAGGCUGUUAGCCG
+score = -121
+gap = -3
+match = 1
+mismatch = -1
+Line 20
+==================================================================
+------A---UAA-G-AAC---G-C---AC----CACCG-AU--------G---
+AAAAAAAUUUUAAGGAAGCGGGGCCAAAACCCCCCAGCGAAGGGGGGGGGGGGG
+score = -88
+gap = -3
+match = 1
+mismatch = -1
+Line 21
+==================================================================
+G-----------A--U-AUA-------C-----C-G-AU-----GA-ACG-U---A-----A
+GAAAAAAAAAAAAUUUAAGACCCCCCCCCCCCCCGGAAUGGGGGGAAACGUUAAAAAAAAAA
+score = -112
+gap = -3
+match = 1
+mismatch = -1
+Line 22
+==================================================================
+--A-GCUCUGACCC-GCUU-GGCUAU--U-UG--AAC-----------GA-UUC-U--GAGAA------C----C--------------C--------C----CG-----GAG-CCCC--G---CCCGUGACCUGGUUACACAACCGUAAAAGGUCCCGAUUGGGGGGGACGCGGCGGGUUCAGGUCAUAGCCGUCG
+AAAGGCAGGGAAAGGGAUAGGGCUAUUUUUUGAAAACGGGGGGGGGGGGAUUUCUUGGGAGACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCGGGGGGGAGCCCCUGGGCCCCCCGUGACCUGGUUACACAACCGUAAAAGGUCCCGAUU-----GGACGCGGCGGGUUCAGGUCAUAGCCGUCG
+score = -131
+gap = -3
+match = 1
+mismatch = -1
+Line 23
+==================================================================
+CAACA--GC-CAGAAACA-GU-U-AGA--GCUCUA-CUGAAU-G--UU-AAA----AUAUAUUC-GCC-GCUGU-----GA-AU-C--UUAC-G--G---UGU-CAGAC-G---C--UG-UC--AGG--UG----UCUU-C--UGUC-G-C-
+GCGCUGGGUCCAUAUACGGGUUUAACCGGGCUGUGCCAGACUGGUUUGAACAAAAAAUAUAAUGGGUCGGCAGGGGGGGGAAAUCCUUUUACGGGGGUUUUGUCCAGACGGCCCCUUUCUUCAAAUUUUUCUUUUUCGUCCUUUGUCGGCCC
+score = -124
+gap = -3
+match = 1
+mismatch = -1
+Line 24
+==================================================================
+AAAGCGUUG-CU--UU----G--U-G-GG-AA--UCCACUCCC-GAU-GU-U---UCCGA--C----CCGG-------U------A-C--AUUC-AC-
+CCGGGGUUGCCGUUUUGGGGGUUUGGGGGAAUUUUCCACAAGGGGAUGGUUUUUUUCCGACCCCCCCCCGAUUUUUUUUAAAAAAACCAAAUACAACG
+score = -102
+gap = -3
+match = 1
+mismatch = -1
+Line 25
+==================================================================
+CG---C------G---U--C-G--C-GU--CG---C-C--A--ACG---C-A-G----C------------A-CA--UUAGGA----A-CUAGGUAUUGGCAGUUAAGGUACCCUCGGAU----UU-CAUGCUCCCUGU--UGU---CUGGCCGACGGUCGUACUGGGGGCGACCUCACGAACCCAAGGCGUGCAGCUUG
+CGCCCCGGGGGGGUUUUCCCGGCCCGGUCCCGCCCCCCAAAAAACACCCCAAGGCCCCCAAAAAAAAAAAAACCAUUUUAGGAAAAAACCUAGGUAUUGGCAGUUAAGGUACCCUCGGAUUUUUUUCCAUGCUCCCUGUUUUGUCCCCUGGCCGACGGUCGUACUGGGGGCGACCUCACGAACCCAAGGCGUGCAGCUUG
+score = -70
+gap = -3
+match = 1
+mismatch = -1
+Line 26
+==================================================================
+CC--C--U-----G--CA-GAUUUAGAGG-U-A-CACUA--C--GGACU-U-C-GC--UGCCAAGAGG-GAUC-CU--A-AG-UAG-GGUGAGGUA-A-U-C--UCCU-GUU-AU-GUACGG-U----U-----UUAA--UU-UCUCC--U--UGU-C-CUUUUC-A-U---CCU-GGCA-CC-GUUACG-UUCCAGGCU
+CACCCUUUGGGGGGCCCAGGAGCUAGUGGUUAACCACUUCCCGGGGUCCUUCCGGUUUUGAUAGUACGGGAUCCCAAAAAAUUUAAGGGUUAGGUUAAUUCCUUUCCGGGUCAAUGGUACGCUUUUUUUUUUUUUUGAUUUUUUCUACUUUUUUGGCCCCUAGGCAAUUCCCCCUGGUUACCGGGUUCCGUUUCCAGGCU
+score = -130
+gap = -3
+match = 1
+mismatch = -1
+Line 27
+==================================================================
+AUACUUG-CCA--A-AGG----U---AAA-A--AA-GCCU--C--GUC-UC-C----G-A-------U--CAA--GU-AAA------GGCU-A-AAA-GCCUC-GAU---GG--A---GCCAGGUUGGA---U-U--GCGCCGCCGCGAAUGGUGCUCAGUCCAUCUCGCGUCUCCUGGG
+AAUCUGGCCUUAAAAAGUUUUUUAAAAUAAAAAAAGGCCUCCCGGGUCUUCCCGGGGGAAUUUUUUUUCCCAAGGGUAAAAGGGGGGGGCCAAAACAGGCCAGGGUUGGGGGAAAGGGGCCUGUUUGGAUUUUUUGGGCGCCGCCGCGAAUGGUGCUCAGUCCAUCUCGCGUCUCCUGGG
+score = -96
+gap = -3
+match = 1
+mismatch = -1
+Line 28
+==================================================================
+GCGACCGG-CGGGC-GUCG--GCU---C-----G--G----A--A-CG-CG---GG------G-GACGUU-C------A--UC--C-CGCGGGG--C-UUC-UCCCGC-G
+GUUGCCGGCCUGACGGUCAGGGCACCCCGGGGGGGGGAAAAAAAACCGCCGGGGGGGGGGGGGGGACAUUCCAAAAAAAUUUCCCCCCGCCGUCCCCUUUCUUAAAGGGG
+score = -116
+gap = -3
+match = 1
+mismatch = -1
+Line 29
+==================================================================
+CGU-AG-UG-A-A-CUUGAAUG---U-C--GU----U----U-C-G-G-U-------GU--UU----CA--GU-----
+CACAAGUUAAAAACCUCGACUGUUUUCCGGGUUUUUUUUUUUCCGGGGUUGGGGGGGGUUUUUCCCCCAGGGUGGGGG
+score = -104
+gap = -3
+match = 1
+mismatch = -1
+Line 30
+==================================================================
+G-CCU--GC--G----GA--UU--A-----CU-----A--CCUAACGGAGCGGCAG-UGGCG--A-A---U-C---U-ACUACAAUAC--AAUUUUAU---AUUC-UUUU--CUGUCUACUAC----C--U-AG---C--UUCCCGG-
+CCCGUGGGCGGGGGGGGAUUUUAAACCCCCCUAAAAAACCCCUAAUUCAUUUUUUCUUGUCUAAAAAUUUUCCUUUUAACUACAGAACAAAAUUAGAUAAAACCCUUUCCCCCGGUGUGCUGCCCCCCUUUAAGCCCCUUUUAGCAAG
+score = -144
+gap = -3
+match = 1
+mismatch = -1
+Line 31
+==================================================================
+-------A---------UUU-------GC---G---
+AAAAAAAAUUUUUUUUUUUUGGGGGGGGCGGGGCCC
+score = -80
+gap = -3
+match = 1
+mismatch = -1
+Line 32
+==================================================================
+----UG---GC----G-CG--U------G--A---U-------GU-------G--C--C-GC-G-----U-----U--G-GU-GG---AAUUGUGACCUUAGUAUCUGCGCUCGUUC-GUU-GU-G-GG-CAGCACCCCUUGGCGACGC-ACAUAACAGCACUAGGCAAACCAAUC-AAUCGUUACACGGAUCGGAACCUUC
+UUUUUGGGGGCGGGGGCCGUUUGGGGGGGAAAUUUUGGGGGGGGUGGGGGGGGCCCCCCGGCGGUUUUUUUUUUUUGGGGGUGGGAAAAAUUGUGACCUUAGUAUCUGCGCUCGUUCGGUUGGUGGGGGCCAGCACCCCUUGGCGACAUAACAG-ACUAGGUGAGGCAGC-CAAACAAAUCGUUAAUUUACACGGAACCUUC
+score = -120
+gap = -3
+match = 1
+mismatch = -1
+Line 33
+==================================================================
+U--U-----------------------C-C---C--G------G-
+UUUUCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCGGGGGGGGGGC
+score = -107
+gap = -3
+match = 1
+mismatch = -1
+Line 34
+==================================================================
+--ACAC----UUU-GG-C-U-GAGCG-GC--U-AUUCA--CUCCUAU--GU-U---C-G-U-A-CC----G-AUAUUU-GUUUUGG---A--CACGUCG-UACG-AC---A---U-C-
+AAAUAUUUUUUUUGGGCCUUGGAGUCGGCUUUAACGCACCCGCGAAAGGGUUUCCCCGGUUAACCUGGGGGAAUAUGAGGCGUAGGAAAACCCAGGUCGUUAUAAACAAAAUUUUCCU
+score = -108
+gap = -3
+match = 1
+mismatch = -1
+Line 35
+==================================================================
+--CA---UU--------GCA------U-CC-A----U----------G----A------UC--U--C---
+CCCAUUUUGGGGGGGGGGCAUUUUUUUCCCAAUUUUUGGGGGGGGGGGAAAAAUUUUUUUCUUUCCCGGG
+score = -140
+gap = -3
+match = 1
+mismatch = -1
+Line 36
+==================================================================
+CAGCCAA-C-UU--G-U---U---UUA-C-UG-G--A---CCUUUC-GGUCC---CAAAA-U---AAAACUUG-U--A-------------U--U-UAA---GUA---GAGAGUUAACUAGAGCUAUUUC
+UGGAAAACCUUUGGGUUUUUUUUUUUGCCUUGGGAAACCCCAGAACGGAACCCCCCAUAAUUAAAAUAACUUGUUAAAUUUUUUUUUUUUUUUUUUUGAGGGGCAGGGGAGAGUUAACUAGAGCUAUUUC
+score = -108
+gap = -3
+match = 1
+mismatch = -1
+Line 37
+==================================================================
+C-C--------U--------A----U---UGCU--UA-C-
+CCCUUUUUUUUUAAAAAAAAAUUUUUUUUUGCUUUUACCC
+score = -72
+gap = -3
+match = 1
+mismatch = -1
+Line 38
+==================================================================
+C----------A---CU-G----A--AC--C---G---G-U---A---C--GGU-C-G-CA---UG-
+CAAAAAAAAAAACCCCUGGAAAAAAAACCCCGGGGGGGGUUAAAACCCCGGGGUCCGGCCAUUUUGC
+score = -109
+gap = -3
+match = 1
+mismatch = -1
+Line 39
+==================================================================
+UG--GC-AAG--GUUU----G---U-C--GC-CUUA-ACCAC-AG---GG---G-CC--CUCCCC-C-G---A-GA-CU--A----UUGUCG--UUAGCUUAA-G-C-U-UGCC-UCCUCCGAGCCU-UUCUCGU-AGU----GCUUCUCUU-CCUC-UCCU--AUUGC-UCCUCUGA---CGGUC--CU--
+CUGGGCAAGGGGGCUUGGGGGUUUUCCGGGCCCUUAAACGUCAAUGGGGUGGGGCCCCCCUCCUCCCGGAAAAGGCCCUAAAUUUUUUCUCGUUUUAGUUUUUGGCCUUUUACCUUCAUCAGAUCCUUUUAUUGCAACCGGGGGCAUGUCAUCCCUCUUGAGAAAUCGGUUCGUCUUACCCCGGCCCCCUGG
+score = -136
+gap = -3
+match = 1
+mismatch = -1
+Line 40
+==================================================================
+-UUCGGUGUG-CCC--C-GUUC-------C-------G-C-U--G---G--CG--GG-A-G---AA--UUU-A-A-C----C---
+UUCCAAACGGCCGCCCCGGUACCCCCCCCCGGGGGGGGCCUUGGGGGGGCCCGGGGGAAGGAAAAAUUUUGAAAACCCCCCCCCC
+score = -121
+gap = -3
+match = 1
+mismatch = -1
+Line 41
+==================================================================
+CC--GG--CUCU---C---GAC-A-C----G-----GGC-UG--GA-C---CUC-----GGC-GU-G-
+CCGGGGCCCUGUCCCCGGGGUCAACCGGGGGGGGGGGGCUUCGGGACCCCCCUGGGGGGGGCGGUGGC
+score = -84
+gap = -3
+match = 1
+mismatch = -1
+Line 42
+==================================================================
+-U-U-GAGAAUU--CCUCA-AA---GUG--AAG-G-U-CC-GG---C-C------GAUG-UU----C-AU----G---
+UUUUGGACGAUACCCCUGAAAAGGGGCGAAAAGGGUUCCAGGACCCCCCGGGGGGGAUGUUUCCCCCAAUGGGGGUUU
+score = -88
+gap = -3
+match = 1
+mismatch = -1
+Line 43
+==================================================================
+CCGC-CCGC-AG-CGGG--U-CAGGU-G-AGG-----GGG-G-UUAGAG-C-GGC-G--CCAGAACCAACAG-GA-UG-A-UCAUG--A------UU-U--GCUAGC----CC--AA-UGA-GAU-UG-U--CG-U--GCA-------UG--CCU-U-G-GCUUGCGGGGGGGGCUAAGC
+GAACCCAACAAGCCGAAUUUCCAUGUGGAAGGGGGGGGGGGGUUUCUAGCCGGGUGGCCCCGUAACUGAUAGGGAUUGAAUUGACGAAAUUUUUUUUUUGGGCAAGACCCCCCAAAGUUGGGGCCUUGUUCCCGUUGGGCUUUUUUUUUGCCCCUUUGGGGAUUGCGGGGGGGGCUAAGC
+score = -120
+gap = -3
+match = 1
+mismatch = -1
+Line 44
+==================================================================
+-UCC------U---CG-----------ACU-CA-U----U------GC----U---G---G---A-C---U----G-U-UU-CCUGGUGACACC-----UACGAGGGCUUGCGCUUCUAAACUCG-C--G--AUUCCUCCGCUCC-CGGACGCACCAAACCAAUGUACGUCGGCGCUCUAUUUACUGGAAAACCCCCUCGU
+UUCAUUUUUUUCCCCAAAAAAAAAAAAACUCCAUUUUUUUGGGGGGGCUUUUUGGGGGGGGAAAACCUUUUGGGGGUUUUUCCCUGGUGACACCUUUUUUACGAGGGCUUGCGCUUCUAAACUCGCCGGGAAAUUCCUCCGCGGACCGCACAAU-CUAUUCUAUGUACGUCGGCGCUCUAUUUACUGGAAAACCCCCUCGU
+score = -101
+gap = -3
+match = 1
+mismatch = -1
+Line 45
+==================================================================
+-G--CUCUU-AA--A-UC--UAA-G-AACAG-U-A-GUCGUCCCA--U------U-CAU-UU-GCA-GGGGGU-A-U------A-AUCUCCGA--AGUAGUAUUU-CA--C----U---GAA-CCC--------G---U---CCGGUAAGUGGCGGGGUGACUAUAUUAGAAAACCCACG
+GGCCCUCUUAAUAAAUUCUUUCCGGAAGGAGUUAAGGUAUUUCCAUUUUUUUUUUCCGUUUUGGCAGGGCGGCAAUUAAAAAAAAACCCCCCCAAACUAGCACGUCCACCCUUUUUGGGGAACCCGGGGGGGGGGUUUUCCCCCGGUAAGUGGCGGGGUGACUAUAUUAGAAAACCCACG
+score = -108
+gap = -3
+match = 1
+mismatch = -1
+Line 46
+==================================================================
+-----CA----U---UUCGGUU-AGA----UGG-GGC--G-GUUG-G-A--U--CCAA-U-C----G---C-----ACA----GG-G---CGGU---A-CGC-GAGG-
+CCCCCCAUUUUUUUUUUCGUUUAAGGUUUUUGUGGUCGGGGGUUGGGAAUUUCCCGUAUUCCGGGGGCCCCAAAAAAGAGGGGGGGGCCCCAGAAAAACCGCGGAUGC
+score = -132
+gap = -3
+match = 1
+mismatch = -1
+Line 47
+==================================================================
+GUGAGU--AA--C--C--A-G-C----AG----C--G---A----G-UCAU--C---CCGG--C---CC--
+GCGAGUAAAACCCCCCAAAGGCCAAAAAGCCCCCGGGAAAAGGGGGUUCAUCCCCCCCCGGCCCCCCCCCC
+score = -91
+gap = -3
+match = 1
+mismatch = -1
+Line 48
+==================================================================
+---C----C-UU-UA--G-C---------GU-GUC-------------CC-----UG
+CCCCCCCCCUUUUUAGGGCCGGGGGGGGGGUGGCCCCCCCCCCCCCCCCCUUUUUUG
+score = -105
+gap = -3
+match = 1
+mismatch = -1
+Line 49
+==================================================================
