@@ -2,19 +2,32 @@ k = 3
 
 lista_entrada=("ATT","GCC","CAT","TTG","CCA","TGC","ATC","TCC","TGA","GAC","CAT","ATG","CCA")
 
-class node:
-    lista_entrada = []
-    lista_saida = []
-    def __init__(self,value):    
+
+def setArcoNodeSaida(arco,node):
+    node.lista_saida.append(arco)
+
+def setArcoNodeEntrada(arco,node):
+    node.lista_entrada.append(arco)
+
+class node():
+    lista_entrada = list([object])
+    lista_saida = list([object])
+    def __init__(self,value):
         self.value = value
 
-class arco:
-    node_saida = node()
-    node_entrada = node()
-    def __init__(self,node_saida,node_entrada,rotulo):
-        self.node_saida = node_saida
-        self.node_entrada = node_entrada
+class arco():
+
+    def bindingNodeArco(self):
+        self.node_saida.lista_saida.append(self)
+        self.node_entrada.lista_saida.pop()
+        self.node_entrada.lista_entrada.append(self)
+        self.node_saida.lista_entrada.pop()
+
+    def __init__(self,ns,ne,rotulo):
+        self.node_saida = ns
+        self.node_entrada = ne
         self.rotulo = rotulo
+        self.bindingNodeArco()
 
 lista_node = []
 lista_arco = []
@@ -39,12 +52,6 @@ for i in lista_entrada:
         node_s = [lista_node[x] for x in range(len(lista_node)) if lista_node[x].value == sufixo][0]
 
     arco_c = arco(node_p,node_s,i)
-
-    #vinculo de arco e nos
-
-    #node_p.lista_saida.append(arco_c)
-
-    #node_s.lista_entrada.append(arco_c)
 
     lista_arco.append(arco_c)
 
