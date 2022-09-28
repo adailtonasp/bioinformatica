@@ -1,8 +1,8 @@
 # lista_entrada=("ATT","GCC","CAT","TTG","CCA","TGC","ATC","TCC","TGA","GAC","CAT","ATG","CCA")
 # lista_entrada=("AAGG","AGGG","ATGG","ATGG","GATG","GGAT","GGGG","GGGT","GGTA","GGTG","GGTG","GTAA","GTGA","GTGG","TAAG","TGGA","TGGT","TGGT")
-lista_entrada=("GAA","ATT","AAG","TGG","GGG","TTG","AGT","AAT","TGA","GTG")
-# with open("entrada_bruijn.txt", 'r') as file_w:
-#     lista_entrada = file_w.readline().split(",")
+# lista_entrada=("GAA","ATT","AAG","TGG","GGG","TTG","AGT","AAT","TGA","GTG")
+with open("entrada_bruijn.txt", 'r') as file_w:
+    lista_entrada = file_w.readline().split(",")
 
 k = len(lista_entrada[0])
 
@@ -71,44 +71,75 @@ except:
     exit()
 
 #correcao para inicio do caminho no ciclo
-while node_atual.grau_saida == 1 and node_atual.grau_entrada == 0:
+#correcao para loops no inicio
+while True:
+    print("Resolvendo correcoes de finalizacao")
+    try:
+        arco_c = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == node_atual and lista_arco[x].node_entrada == node_atual]
 
-    #encontra um arco cuja saida e o no atual
-    
-    arco_c = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == node_atual][0]
-    
+        for i in arco_c:
+            string_saida = string_saida + node_atual.value[-1]
 
-    #remova esse arco da lista de arcos e atualiza o grau
+            node_atual.grau_entrada -= 1
 
-    lista_arco.remove(arco_c)
+            node_atual.grau_saida -= 1
 
-    #nao e necessario atualizar o grau de cada no ?
+            lista_arco.remove(i)
+    except:
+        pass
 
-    node_atual.grau_saida -= 1
+    while node_atual.grau_saida == 1 and node_atual.grau_entrada == 0:
+        
+        arco_c = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == node_atual][0]
 
-    node_atual = arco_c.node_entrada
+        lista_arco.remove(arco_c)
 
-    node_atual.grau_entrada -= 1
+        node_atual.grau_saida -= 1
 
-    string_saida = string_saida + node_atual.value[-1]
+        node_atual = arco_c.node_entrada
+
+        node_atual.grau_entrada -= 1
+
+        string_saida = string_saida + node_atual.value[-1]
+
+    if len([lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == node_atual and lista_arco[x].node_entrada == node_atual]) == 0:
+        break
 
 #correcao para finalizacao do caminho no ciclo
+#correcao para loops no final
 string_saida_anexo = ""
-while final_node.grau_entrada == 1 and final_node.grau_saida == 0:
-    
-    string_saida_anexo = final_node.value[-1] + string_saida_anexo
+while True:
+    print("Resolvendo correcoes de finalizacao")
+    try:
+        arco_c = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == final_node and lista_arco[x].node_entrada == final_node]
 
+        for i in arco_c:
+            string_saida_anexo = final_node.value[-1] + string_saida_anexo
 
-    arco_c = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_entrada == final_node][0]
+            final_node.grau_entrada -= 1
 
-    lista_arco.remove(arco_c)
+            final_node.grau_saida -= 1
 
-    final_node.grau_entrada -= 1
+            lista_arco.remove(i)
+    except:
+        pass
 
-    final_node = arco_c.node_saida
+    while final_node.grau_entrada == 1 and final_node.grau_saida == 0:
+        
+        string_saida_anexo = final_node.value[-1] + string_saida_anexo
 
-    final_node.grau_saida -= 1
+        arco_c = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_entrada == final_node][0]
 
+        lista_arco.remove(arco_c)
+
+        final_node.grau_entrada -= 1
+
+        final_node = arco_c.node_saida
+
+        final_node.grau_saida -= 1
+
+    if len([lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == final_node and lista_arco[x].node_entrada == final_node]) == 0:
+        break
 
 arco_c = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == node_atual][0]
 
@@ -141,6 +172,7 @@ while (len(lista_arco) != 0):
     ciclo_node_v = []
 
 string_saida = string_saida + string_saida_anexo
-print("tamanho entrada:",len(lista_entrada),"/n")
+print("k:",k)
+print("tamanho entrada:",len(lista_entrada))
 print(string_saida)
-print("tamanho saida:",len(string_saida),"/n")
+print("tamanho saida:",len(string_saida))
