@@ -1,10 +1,10 @@
-k = 3
+# lista_entrada=("ATT","GCC","CAT","TTG","CCA","TGC","ATC","TCC","TGA","GAC","CAT","ATG","CCA")
+# lista_entrada=("AAGG","AGGG","ATGG","ATGG","GATG","GGAT","GGGG","GGGT","GGTA","GGTG","GGTG","GTAA","GTGA","GTGG","TAAG","TGGA","TGGT","TGGT")
+lista_entrada=("GAA","ATT","AAG","TGG","GGG","TTG","AGT","AAT","TGA","GTG")
+# with open("entrada_bruijn.txt", 'r') as file_w:
+#     lista_entrada = file_w.readline().split(",")
 
-#lista_entrada=("ATT","GCC","CAT","TTG","CCA","TGC","ATC","TCC","TGA","GAC","CAT","ATG","CCA")
-
-with open("entrada_bruijn.txt", 'r') as file_w:
-    lista_entrada = file_w.readline().split(",")
-        
+k = len(lista_entrada[0])
 
 class node:
     grau_entrada = 0
@@ -74,7 +74,9 @@ except:
 while node_atual.grau_saida == 1 and node_atual.grau_entrada == 0:
 
     #encontra um arco cuja saida e o no atual
+    
     arco_c = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == node_atual][0]
+    
 
     #remova esse arco da lista de arcos e atualiza o grau
 
@@ -96,6 +98,7 @@ while final_node.grau_entrada == 1 and final_node.grau_saida == 0:
     
     string_saida_anexo = final_node.value[-1] + string_saida_anexo
 
+
     arco_c = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_entrada == final_node][0]
 
     lista_arco.remove(arco_c)
@@ -105,6 +108,7 @@ while final_node.grau_entrada == 1 and final_node.grau_saida == 0:
     final_node = arco_c.node_saida
 
     final_node.grau_saida -= 1
+
 
 arco_c = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == node_atual][0]
 
@@ -137,4 +141,6 @@ while (len(lista_arco) != 0):
     ciclo_node_v = []
 
 string_saida = string_saida + string_saida_anexo
-input(string_saida)
+print("tamanho entrada:",len(lista_entrada),"/n")
+print(string_saida)
+print("tamanho saida:",len(string_saida),"/n")
