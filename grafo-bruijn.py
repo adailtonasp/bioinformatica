@@ -1,10 +1,21 @@
 # lista_entrada=("ATT","GCC","CAT","TTG","CCA","TGC","ATC","TCC","TGA","GAC","CAT","ATG","CCA")
 # lista_entrada=("AAGG","AGGG","ATGG","ATGG","GATG","GGAT","GGGG","GGGT","GGTA","GGTG","GGTG","GTAA","GTGA","GTGG","TAAG","TGGA","TGGT","TGGT")
 # lista_entrada=("GAA","ATT","AAG","TGG","GGG","TTG","AGT","AAT","TGA","GTG")
-with open("entrada_bruijn.txt", 'r') as file_w:
+with open("entrada_bruijn2.txt", 'r') as file_w:
     lista_entrada = file_w.readline().split(",")
 
 k = len(lista_entrada[0])
+
+# for i in range(len(lista_entrada)):
+#     if(len(lista_entrada[i]) != k):
+#         print("entrada-1:",lista_entrada[i-1])
+#         print("entrada:",lista_entrada[i])
+#         try: 
+#             print("entrada+1:",lista_entrada[i+1])
+#         except:
+#             print("entrada+1 fora de alcance")
+#         print("i:",i)
+#         input()
 
 class node:
     grau_entrada = 0
@@ -85,6 +96,7 @@ while True:
             node_atual.grau_saida -= 1
 
             lista_arco.remove(i)
+
     except:
         pass
 
@@ -112,7 +124,6 @@ while True:
     print("Resolvendo correcoes de finalizacao")
     try:
         arco_c = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == final_node and lista_arco[x].node_entrada == final_node]
-
         for i in arco_c:
             string_saida_anexo = final_node.value[-1] + string_saida_anexo
 
@@ -121,6 +132,7 @@ while True:
             final_node.grau_saida -= 1
 
             lista_arco.remove(i)
+        
     except:
         pass
 
@@ -141,7 +153,11 @@ while True:
     if len([lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == final_node and lista_arco[x].node_entrada == final_node]) == 0:
         break
 
-arco_c = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == node_atual][0]
+try:
+    #a resolucao pode ter finalizado com todos os arcos
+    arco_c = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == node_atual][0]
+except:
+    pass
 
 ciclo_node_v = [] #ciclo de valores de no
 
