@@ -3,14 +3,12 @@
 import csv
 import sys
 
-
 class node:
     def __init__(self, value, n1, n2):
         self.value = value
         self.n1 = n1
         self.n2 = n2
         self.op = ""
-
 
 def create_matrix(s1, s2, gap):
 
@@ -28,7 +26,6 @@ def create_matrix(s1, s2, gap):
         matrix[0][i].value = gap * i
 
     return matrix
-
 
 def set_value(matrix, act_node, gap, mismatch, match):
     """
@@ -60,7 +57,6 @@ def set_value(matrix, act_node, gap, mismatch, match):
     matrix[act_node[1]][act_node[0]].op = value[0]
 
     matrix[act_node[1]][act_node[0]].value = value[1]
-
 
 def backtrace(matrix):
     # max_value_coluna = matrix[len(matrix)-1][0].value
@@ -122,7 +118,6 @@ def backtrace(matrix):
 
     return seq_s1, seq_s2, act_node
 
-
 def correct_backtrace(matrix, act_node, seq_s1, seq_s2):
     if act_node[0] == 0 and act_node[1] > 0:  # siginica que esta na primeira coluna
         for i in range(act_node[1], 1):
@@ -132,7 +127,6 @@ def correct_backtrace(matrix, act_node, seq_s1, seq_s2):
         for j in range(act_node[0], 1):  # significa que esta na primeira linha
             seq_s1 = seq_s1 + matrix[act_node[1]][j-1].n1
             seq_s2 = seq_s2 + "-"
-
 
 def calc_backtrace_value(matrix, seq_s1, seq_s2, match, mismatch, gap):
 
@@ -157,7 +151,6 @@ def calc_backtrace_value(matrix, seq_s1, seq_s2, match, mismatch, gap):
     # print("sum_value", sum_value)
 
     return sum_value
-
 
 def main():
 
@@ -205,7 +198,6 @@ def main():
                     "==================================================================\n")
             # print(f"Line {count} OK\n")
             count = count + 1
-
 
 if __name__ == "__main__":
     main()

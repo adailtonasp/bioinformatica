@@ -1,5 +1,5 @@
 import time
-
+import sys
 
 class node:
     grau_entrada = 0
@@ -8,7 +8,6 @@ class node:
     def __init__(self, value):
         self.value = value
 
-
 class arco:
     def __init__(self, node_saida, node_entrada, rotulo):
         node_saida.grau_saida += 1
@@ -16,7 +15,6 @@ class arco:
         self.node_saida = node_saida
         self.node_entrada = node_entrada
         self.rotulo = rotulo
-
 
 def criaGrafo(lista_entrada, lista_arco, lista_node, k):
     for i in lista_entrada:
@@ -44,7 +42,6 @@ def criaGrafo(lista_entrada, lista_arco, lista_node, k):
 
         lista_arco.append(arco_c)
 
-
 def getIniEnd(lista_node):
     init_node = None
     final_node = None
@@ -64,35 +61,28 @@ def getIniEnd(lista_node):
 
 # correcao para inicio do caminho no ciclo
 # correcao para loops no inicio
-
-
 def corteIni(lista_arco, node_atual):
 
     string_saida = ""
 
     string_saida = string_saida + node_atual.value
 
+    arco_l = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == node_atual and lista_arco[x].node_entrada == node_atual]
+
     while True:
-        try:
-            arco_c = [lista_arco[x] for x in range(len(
-                lista_arco)) if lista_arco[x].node_saida == node_atual and lista_arco[x].node_entrada == node_atual]
 
-            for i in arco_c:
-                string_saida = string_saida + node_atual.value[-1]
+        for i in arco_l:
+            string_saida = string_saida + node_atual.value[-1]
 
-                node_atual.grau_entrada -= 1
+            node_atual.grau_entrada -= 1
 
-                node_atual.grau_saida -= 1
+            node_atual.grau_saida -= 1
 
-                lista_arco.remove(i)
-
-        except:
-            pass
+            lista_arco.remove(i)
 
         while node_atual.grau_saida == 1 and node_atual.grau_entrada == 0:
 
-            arco_c = [lista_arco[x] for x in range(
-                len(lista_arco)) if lista_arco[x].node_saida == node_atual][0]
+            arco_c = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == node_atual][0]
 
             lista_arco.remove(arco_c)
 
@@ -104,25 +94,24 @@ def corteIni(lista_arco, node_atual):
 
             string_saida = string_saida + node_atual.value[-1]
 
-        if len([lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == node_atual and lista_arco[x].node_entrada == node_atual]) == 0:
+        arco_l = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == node_atual and lista_arco[x].node_entrada == node_atual]
+
+        if len(arco_l) == 0:
             break
 
     return string_saida, node_atual
 
 # correcao para finalizacao do caminho no ciclo
 # correcao para loops no final
-
-
 def corteFinal(lista_arco, final_node):
 
     string_saida_anexo = ""
 
-    while True:
-        print("Resolvendo correcoes de finalizacao")
+    arco_l = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == final_node and lista_arco[x].node_entrada == final_node]
 
+    while True:
+        #print("Resolvendo correcoes de finalizacao")
         # loops
-        arco_l = [lista_arco[x] for x in range(len(
-            lista_arco)) if lista_arco[x].node_saida == final_node and lista_arco[x].node_entrada == final_node]
         for i in arco_l:
             string_saida_anexo = final_node.value[-1] + string_saida_anexo
 
@@ -137,8 +126,7 @@ def corteFinal(lista_arco, final_node):
 
             string_saida_anexo = final_node.value[-1] + string_saida_anexo
 
-            arco_c = [lista_arco[x] for x in range(
-                len(lista_arco)) if lista_arco[x].node_entrada == final_node][0]
+            arco_c = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_entrada == final_node][0]
 
             lista_arco.remove(arco_c)
 
@@ -148,25 +136,12 @@ def corteFinal(lista_arco, final_node):
 
             final_node.grau_saida -= 1
 
-        if len([lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == final_node and lista_arco[x].node_entrada == final_node]) == 0:
+        arco_l = [lista_arco[x] for x in range(len(lista_arco)) if lista_arco[x].node_saida == final_node and lista_arco[x].node_entrada == final_node]
+
+        if len(arco_l) == 0:
             break
 
     return string_saida_anexo, final_node
-
-
-def fazCaminho(node_atual, final_node, lista_arco, lista_arco_caminho):
-
-    arco_c = [lista_arco[x] for x in range(len(
-        lista_arco)) if lista_arco[x].node_saida == node_atual and lista_arco[x] not in lista_arco_caminho][0]
-
-    if(arco_c.node_entrada == final_node):
-        return arco_c
-
-    node_atual = arco_c.node_entrada
-
-    lista_arco_caminho.append(fazCaminho(
-        node_atual, final_node, lista_arco, lista_arco_caminho))
-
 
 def cicloEuleriano(lista_arco, node_atual, final_node):
     string_saida = ""
@@ -231,12 +206,11 @@ def cicloEuleriano(lista_arco, node_atual, final_node):
 
     return string_saida
 
-
 def main():
 
     start = time.time()
 
-    with open("entrada_bruijn.txt", 'r') as file_w:
+    with open(sys.argv[1], 'r') as file_w:
         lista_entrada = file_w.readline().split(",")
 
     # lista_entrada=["ATT","GCC","CAT","TTG","CCA","TGC","ATC","TCC","TGA","GAC","CAT","ATG","CCA"]
@@ -269,7 +243,6 @@ def main():
     print("tamanho entrada:", len(lista_entrada))
     print("tamanho saida:", len(resultado))
     print("tempo:", time.time()-start)
-
 
 if __name__ == "__main__":
     main()
